@@ -1,0 +1,20 @@
+:root {
+  --cor-fundo: #FFF1D6;
+  --cor-primaria: #F4A03C;
+  --cor-secundaria: #FEC96B;
+  --cor-destaque: #63A24D;
+  --cor-contraste: #3F3F3F;
+  --cor-roupa-azul: #4C88B0;
+  --cor-cortina: #F7D38C;
+  --cor-caixa: #B0712C;
+  --cor-logo: #865735;
+  --cor-hoover: #5d3a22;
+}
+
+.app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cor-fundo);
+    align-items: flex-start;
+}
