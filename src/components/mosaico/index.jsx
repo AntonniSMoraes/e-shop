@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import imageTest from "../../res/dog_clothes.png";
 
-export const Mosaico = () => {
+export const Mosaico = ({size}) => {
     return(
-        <Container>
-            teste
+        <Container size={size}>
+            <Image src={imageTest} alt="Mosaico" />
         </Container>
     );
 }
@@ -14,12 +15,21 @@ const Container = styled.button`
     justify-content: center;
     align-items: center;
     background-color: var(--cor-branco);
-    border-radius: 20px;
     border: none;
-    width: 200px;
-    height: 300px;
-    padding: 20px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+    ${({ size }) => size === 'P' && `
+        grid-column: span 2;
+        grid-row: span 2;
+    `}
+    ${({ size }) => size === 'M' && `
+        grid-column: span 4;
+        grid-row: span 4;
+    `}
+    ${({ size }) => size === 'G' && `
+        grid-column: span 8;
+        grid-row: span 8;
+    `}
+
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     cursor: pointer;
 
@@ -27,4 +37,10 @@ const Container = styled.button`
         box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
         transform: scale(1.05);
     }
+`;
+
+const Image = styled.img`
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 `

@@ -16,4 +16,6 @@ const Container = styled.aside`
     width: 200px;
     height: 100%;
     padding: 20px;
+    margin-right: 2rem;
+    align-items: center;
 `

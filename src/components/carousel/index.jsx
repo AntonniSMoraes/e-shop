@@ -5,21 +5,18 @@ import React, { useEffect, useState } from "react";
 import { arrowBack, arrowForward } from "../../constants/utils";
 
 const slides = [
-    imagemTeste,
-    imagemTeste2,
-    imagemTeste,
-    imagemTeste2,
+    imagemTeste
 ]
 
 export const Carousel = () => {
     const [ index, setIndex ] = useState(0);
 
     const nextSlide = () => {
-        setIndex((prev) => (prev === slides.length-1 ? 0 : prev + 1));
+        slides.length>1 && setIndex((prev) => (prev === slides.length-1 ? 0 : prev + 1));
     };
 
     const prevSlide = () => {
-        setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+        slides.length>1 && setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     };
 
     useEffect(() => {
@@ -34,9 +31,15 @@ export const Carousel = () => {
 
     return (
         <Container>
-            <ChangeButton style={{ left: "100px" }} onClick={prevSlide}>{arrowBack}</ChangeButton>
+            {
+                index > 0 &&
+                <ChangeButton style={{ left: "100px" }} onClick={prevSlide}>{arrowBack}</ChangeButton>
+            }
             <CarouselItem src={slides[index]} alt="Banner" />
-            <ChangeButton style={{ right: "100px" }} onClick={nextSlide}>{arrowForward}</ChangeButton>
+            {
+                index > 0 &&
+                <ChangeButton style={{ right: "100px" }} onClick={nextSlide}>{arrowForward}</ChangeButton>
+            }
         </Container>
     );
 }
