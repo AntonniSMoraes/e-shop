@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 :root {
+  --cor-branco: #FFFFFF;
   --cor-fundo: #FFF1D6;
   --cor-primaria: #F4A03C;
   --cor-secundaria: #FEC96B;
@@ -13,7 +16,9 @@
 
 .app {
     display: flex;
-    width: 100vw;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding: 1rem 2rem;
     height: 100vh;
     background-color: var(--cor-fundo);
     align-items: flex-start;

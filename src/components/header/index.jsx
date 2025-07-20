@@ -18,10 +18,9 @@ export const Header = () => {
 
 const Container = styled.header`
     display: flex;
-    width: 100%;
+    width: calc(100% - 2rem);
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
 
     & article {
         display: flex;
