@@ -3,6 +3,7 @@ import { Mosaico } from "../../components/mosaico";
 import { SideBar } from "../../components/sideBar";
 import { Carousel } from "../../components/carousel";
 import { useState } from "react";
+import { Title } from "../../components/title";
 
 const Home = () => {
     const [ mosaicos, setMosaicos ] = useState([
@@ -30,8 +31,9 @@ const Home = () => {
     return(
         <Container>
                 <Carousel />
+                <Title>Mosaicos</Title>
                 <MosaicoContainer>
-                    <SideBar />
+                    {/* <SideBar /> */}
                     <MosaicoGrid>
                         {mosaicos.map(mosaico => (
                             <Mosaico key={mosaico.id} size={mosaico.size} />))
@@ -57,6 +59,7 @@ const Container = styled.main`
 const MosaicoContainer = styled.section`
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
 `
 

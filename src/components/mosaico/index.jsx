@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import imageTest from "../../res/dog_clothes.png";
+import { useNavigate } from "react-router-dom";
 
 export const Mosaico = ({size}) => {
+    
+    const nav = useNavigate();
+
     return(
-        <Container size={size}>
+        <Container size={size} onClick={() => nav('/produto')}>
             <Image src={imageTest} alt="Mosaico" />
         </Container>
     );

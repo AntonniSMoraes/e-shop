@@ -6,8 +6,10 @@ export const Header = () => {
     return(
         <Container>
             <article>
-                <img src={logo} />
-                <h1>Moda Pet</h1>
+                <a href="/">
+                    <img src={logo}/>
+                    <h1>Moda Pet</h1>
+                </a>
             </article>
             <article>
                 <CircularButton width="50px"/>
@@ -31,5 +33,14 @@ const Container = styled.header`
     & img {
         width: 80px;
         height: 80px;
+    }
+
+    & a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--cor-logo);
+        font-family: 'Caveat Brush', cursive;
+        font-size: 1.5rem;
     }
 `
